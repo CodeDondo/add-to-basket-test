@@ -18,13 +18,13 @@ function getProducts(myURL, myLimit, myCategory) {
 
     //console.log(myFetchURL)
     fetch(myFetchURL)
-        .then((!response) => [
+        .then((response) => {
             if (!response.ok) {
         // throw error stopper afviklingen af script og går til .catch
-        throw new Error{ "response is not ok" };
+        throw new Error ["response is not ok"];
     }
     return response.json();
-        ]
+}
     )
         .then((data) => {
 
@@ -83,7 +83,7 @@ function buyCallBack(myId) {
 
         // nyt item
         let myNewItem = {
-            id: myProductId
+            id: myProductId,
             amount: 1
         }
         basketData.push(myNewItem)
